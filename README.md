@@ -8,12 +8,12 @@ Para inicializar la aplicacion hay que instalar flask en el caso de que no lo te
 
 Luego seteamos los valores por default de nuestra app, para esto vamos a tener que escribir en el terminal las siguientes lineas de código:
 
--set FLASK_APP=todo
--set FLASK_ENV=development (Esto nos sirve para que las modificaciones que le hagamos al codigo se vean impactadas en el momento y no tengamos que prender y apagar flask para poder ver los cambios)
--set FLASK_DATABASE_HOST='localhost'
--set FLASK_DATABASE_USER=(Usuario de su base de datos, si no funciona con un superusuario prueben con su usuario root)
--set FLASK_DATABASE_PASSWORD=(password de su base de datos)
--set FLASK_DATABASE=(base de datos que queramos utilizar)
+  - set FLASK_APP=todo
+  - set FLASK_ENV=development (Esto nos sirve para que las modificaciones que le hagamos al codigo se vean impactadas en el momento y no tengamos que prender y apagar flask para poder ver los cambios)
+  - set FLASK_DATABASE_HOST='localhost'
+  - set FLASK_DATABASE_USER=(Usuario de su base de datos, si no funciona con un superusuario prueben con su usuario root)
+  - set FLASK_DATABASE_PASSWORD=(password de su base de datos)
+  - set FLASK_DATABASE=(base de datos que queramos utilizar)
 
 En el caso de que set NO FUNCIONE utilice export si utiliza alguna terminal como gitbash o la misma terminal de MAC y repita otra vez los comandos.
 
