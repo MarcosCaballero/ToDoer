@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="div-background-paginas">
+        <h1 class="Titulo-personales-de-cada-pagina">{% block title %}Editar {{ todo['description'] }}{% endblock %}</h1>
+    </div>
+    {% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <label name="description">Descripción</label>
+        <input name="description" id="description" value="{{ request.form['description'] or todo['description'] }}" required="Por favot ingresa tu usuario">
+        <label for="completed">Completado</label>
+        <input type="checkbox" name="completed" id="completed" {% if todo['completed'] == 1 %}checked{% endif %}/>
+        <input type="submit" value="Guardar" />
+    </form>
+    <form action="{{ url_for('todo.delete', id=todo['id']) }}" method="POST">
+        <input class="danger" type="submit" value="Eliminar" onclick="return confirm('¿Estas seguro de querer eliminarlo?')">
+    </form>
+{% endblock %}

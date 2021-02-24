@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - TODO LIST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+</head>
+<nav class="BaseNavbar">
+    <h1>TODO LIST</h1>
+    <ul>
+        {% if g.user %}
+            <span class="button">{{ g.user['username'] }}</span></li>
+            <button class="button"><a  href="{{ url_for('auth.logout') }}">Cerrar sesión</a></button></li>
+        {% else %}
+            <button class="button"><a  href="{{ url_for('auth.register') }}">Registrarse</a></button>
+            <button class="button"><a  href="{{ url_for('auth.login') }}">Iniciar sesión</a></button>
+        {% endif %}
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        <div class="div-background-paginas">
+            {% block header %}{% endblock %}
+        </div>    
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if message %}
+        {% for message in messages%}
+            <p>{{ mensaje }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="Container-todo">
+        <h2>Tabla de ToDos</h2>
+        <div class="flash-2">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer class="footer">
+        Este es el footer de la pagina web
+    </footer>
+</section>                          

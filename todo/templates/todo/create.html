@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block header%}
+    <div class="div-background-paginas">
+        <h1 class="Titulo-personales-de-cada-pagina">{% block title %}Nuevo Todo{% endblock %}</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <label for="description">Descripción</label>
+        <input name="description" id="description" required>
+        <input type="submit" value="Guardar">
+    </form>
+{% endblock %}
